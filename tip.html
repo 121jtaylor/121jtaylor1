@@ -1,0 +1,69 @@
+<DOCTYPE!html>
+  <html>
+    <head>
+      <style>
+        body{
+          background:maroon;
+        }
+        .container{
+          background-color:white;
+          font-family:"Times New Roman";
+          text-align:center;
+          border-radius: 25px;
+          width:300px;
+        }
+        #header{
+          background-color:350718;
+          color:white;
+          padding:20px;
+        }
+        button{
+          border-radius:5px;
+          background-color:#DA5B68;
+        }
+        .inline {
+          display:inline;
+        }
+      </style>
+      <script type="text/javascript">
+
+      function calculate() {
+        var bill = document.getElementById("bill").value;
+        var service = document.getElementById("service").value;
+        var people = document.getElementById("people").value;
+
+        var total = ((bill * service) + bill)/people;
+        document.getElementById("total").style.display = "block";
+        document.getElementById("total").innerHTML = total;
+      }
+        document.getElementById("total").onclick=function calculate()
+      {}
+
+      </script>
+    </head>
+    <body>
+      <div class="container">
+        <p id="header">TIP CALCULATOR</p>
+        <p>How much was your bill?</p>
+        <form><p class="inline">$</p><input id="bill" type="text" placeholder="Bill Amount">
+        <p>How was your service?</p>
+        <select id="service">
+          <option class="disabled">Choose an Option</option>
+          <option value="0.2">20% - Great</option>
+          <option value="0.15">15% - Good</option>
+          <option value="0.1">10% - OK</option>
+          <option value=".05">5% - Poor</option>
+        </select>
+        <p>How many people are sharing the bill?</p>
+          <input id="people" type="text" placeholder="Number of People"><p class="inline">people</p>
+        </form>
+          <button id="total" >CALCULATE</button>
+          <div id="total">
+            <sup>$</sup><span id="tip">0.00</span>
+            <small id="each">each</small>
+          </div>
+          <br>
+          <br>
+      </div>
+    </body>
+  </html>
